@@ -200,7 +200,7 @@ public class PlayerDAO {
             String itemTimeSC = dataArray.toJSONString();
             dataArray.clear();
             
-            dataArray.add(20); //id nhiệm vụ
+            dataArray.add(0); //id nhiệm vụ
             dataArray.add(0); //index nhiệm vụ con
             dataArray.add(0); //số lượng đã làm
             String task = dataArray.toJSONString();

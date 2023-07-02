@@ -947,7 +947,7 @@ public class NPoint {
     }
 
     private void setDef() {
-        this.def = this.defg * 4;
+        this.def = this.defg * 8;
         this.def += this.defAdd;
         //đồ
         for (Integer tl : this.tlDef) {
@@ -1061,7 +1061,7 @@ public class NPoint {
         intrinsic = this.player.playerIntrinsic.intrinsic;
         percentDameIntrinsic = 0;
         int percentDameSkill = 0;
-        byte percentXDame = 0;
+        int percentXDame = 0;
         Skill skillSelect = player.playerSkill.skillSelect;
         switch (skillSelect.template.id) {
             case Skill.DRAGON:
@@ -1080,7 +1080,7 @@ public class NPoint {
 //                }
                 percentDameSkill = skillSelect.damage;
                 if (this.player.setClothes.songoku == 5) {
-                    percentXDame = 100;
+                    percentXDame = 200;
                 }
                 break;
             case Skill.GALICK:
@@ -1089,7 +1089,7 @@ public class NPoint {
                 }
                 percentDameSkill = skillSelect.damage;
                 if (this.player.setClothes.kakarot == 5) {
-                    percentXDame = 100;
+                    percentXDame = 200;
                 }
                 break;
             case Skill.ANTOMIC:
@@ -1116,7 +1116,7 @@ public class NPoint {
                 }
                 percentDameSkill = skillSelect.damage;
                 if (this.player.setClothes.kirin == 5) {
-                    percentXDame = 100;
+                    percentXDame = 200;
                 }
                 break;
             case Skill.LIEN_HOAN:
@@ -1125,7 +1125,7 @@ public class NPoint {
                 }
                 percentDameSkill = skillSelect.damage;
                 if (this.player.setClothes.ocTieu == 5) {
-                    percentXDame = 50;
+                    percentXDame = 100;
                 }
                 break;
             case Skill.DICH_CHUYEN_TUC_THOI:
@@ -1221,7 +1221,7 @@ public class NPoint {
             }
             if (this.player.cFlag != 0) {
                 if (this.player.cFlag == 8) {
-                    tiemNang += ((long) tiemNang * 5 / 100);
+                    tiemNang += ((long) tiemNang * 10 / 100);
                 } else {
                     tiemNang += ((long) tiemNang * 5 / 100);
                 }
@@ -1279,9 +1279,9 @@ public class NPoint {
             tiemNang += ((long) tiemNang * 5);
         } else tiemNang += ((long) tiemNang * 10);
         return tiemNang;*/
-        if(power <=100000000000L) tiemNang += ((long) tiemNang * 10);
-        else if(power <= 400000000000L && power >=100000000000L) tiemNang += ((long) tiemNang *5);
-        else if(power <= 700000000000L && power >=400000000000L) tiemNang += ((long) tiemNang * 2);
+        if(power <=100000000000L) tiemNang += ((long) tiemNang * 2);
+        else if(power <= 400000000000L && power >=100000000000L) tiemNang += ((long) tiemNang );
+        else if(power <= 700000000000L && power >=400000000000L) tiemNang += ((long) tiemNang /2);
         else if(power <= 1000000000000L && power >= 700000000000L) tiemNang += ((long) tiemNang / 30);
         else if(power <= 1200000000000L && power >= 1000000000000L) tiemNang += ((long) tiemNang / 40);
         else if(power <= 1500000000000L && power >= 1200000000000L) tiemNang += ((long) tiemNang / 50);
@@ -1376,102 +1376,102 @@ public class NPoint {
 
     public int getHpMpLimit() {
         if (limitPower == 0) {
-            return 220000;
-        }
-        if (limitPower == 1) {
-            return 240000;
-        }
-        if (limitPower == 2) {
             return 300000;
         }
-        if (limitPower == 3) {
-            return 350000;
-        }
-        if (limitPower == 4) {
+        if (limitPower == 1) {
             return 400000;
         }
-        if (limitPower == 5) {
-            return 450000;
-       }
-        if (limitPower == 6) {
+        if (limitPower == 2) {
             return 500000;
         }
+        if (limitPower == 3) {
+            return 600000;
+        }
+        if (limitPower == 4) {
+            return 700000;
+        }
+        if (limitPower == 5) {
+            return 800000;
+       }
+        if (limitPower == 6) {
+            return 900000;
+        }
         if (limitPower == 7) {
-            return 550000;
+            return 1000000;
         }
         if (limitPower == 8) {
-            return 560000;
+            return 1100000;
         }
         if (limitPower == 9) {
-            return 600000;
+            return 1200000;
         }
         return 0;
     }
 
     public int getDameLimit() {
         if (limitPower == 0) {
-            return 11000;
-        }
-        if (limitPower == 1) {
-            return 12000;
-        }
-        if (limitPower == 2) {
             return 15000;
         }
-        if (limitPower == 3) {
-            return 18000;
-        }
-        if (limitPower == 4) {
+        if (limitPower == 1) {
             return 20000;
         }
-       if (limitPower == 5) {
-            return 22000;
+        if (limitPower == 2) {
+            return 25000;
         }
-       if (limitPower == 6) {
-           return 25000;
-       }
-        if (limitPower == 7) {
+        if (limitPower == 3) {
             return 30000;
         }
+        if (limitPower == 4) {
+            return 35000;
+        }
+       if (limitPower == 5) {
+            return 40000;
+        }
+       if (limitPower == 6) {
+           return 45000;
+       }
+        if (limitPower == 7) {
+            return 50000;
+        }
         if (limitPower == 8) {
-            return 31000;
+            return 55000;
         }
         if (limitPower == 9) {
-           return 32000;
+           return 60000;
         }
         return 0;
     }
 
     public short getDefLimit() {
         if (limitPower == 0) {
-            return 550;
-        }
-        if (limitPower == 1) {
-            return 600;
-        }
-        if (limitPower == 2) {
-            return 700;
-        }
-        if (limitPower == 3) {
-            return 800;
-        }
-        if (limitPower == 4) {
             return 1000;
         }
+        if (limitPower == 1) {
+            return 2000;
+        }
+        if (limitPower == 2) {
+            return 3000;
+        }
+        if (limitPower == 3) {
+            return 4000;
+        }
+        if (limitPower == 4) {
+            return 5000;
+        }
         if (limitPower == 5) {
-          return 1200;
+          return 6000;
         }
         if (limitPower == 6) {
-            return 1400;
+            return 7000;
         }
         if (limitPower == 7) {
-            return 1600;
+            return 8000;
         }
         if (limitPower == 8) {
-            return 1700;
+            return 9000;
         }
         if (limitPower == 9) {
-            return 1800;
+            return 1000;
         }
         return 0;
     }
@@ -1504,7 +1504,7 @@ public class NPoint {
         if (limitPower == 8) {
             return 10; }
         if (limitPower == 9) {
-            return 10;
+            return 15;
         }
         return 0;
     }
