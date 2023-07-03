@@ -29,9 +29,10 @@ public class SieuBoHung extends Boss {
         int[] NRs = new int[]{1142,1230,1142};
         int randomDo = new Random().nextInt(itemDos.length);
         int randomNR = new Random().nextInt(NRs.length);
+         byte randomDoz = (byte) new Random().nextInt(Manager.itemIds_TL.length - 1);
         if (Util.isTrue(15, 100)) {
             if (Util.isTrue(30, 100)) {
-                Service.gI().dropItemMap(this.zone, Util.ratiItem(zone, 16, 1, this.location.x, this.location.y, plKill.id));
+                Service.gI().dropItemMap(this.zone, Util.ratiItem(zone, Manager.itemIds_TL[randomDoz], 1, this.location.x, this.location.y, plKill.id));
                 return;
             }
             Service.gI().dropItemMap(this.zone, Util.ratiItem(zone, itemDos[randomDo], 1, this.location.x, this.location.y, plKill.id));
@@ -42,6 +43,8 @@ public class SieuBoHung extends Boss {
         if (TaskService.gI().getIdTask(plKill) == ConstTask.TASK_27_3) {
             Service.gI().dropItemMap(this.zone, new ItemMap(zone, 16, 1, this.location.x, zone.map.yPhysicInTop(this.location.x, this.location.y - 24), plKill.id));
         }
+        byte randomDot = (byte) new Random().nextInt(Manager.itemIds_TL.length - 1);
+        Service.gI().dropItemMap(this.zone, Util.ratiItem(zone, Manager.itemIds_TL[randomDot], 1, this.location.x, this.location.y, plKill.id));
     }
      @Override
     public void active() {

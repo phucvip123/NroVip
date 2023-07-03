@@ -4,6 +4,7 @@ import com.girlkun.models.boss.Boss;
 import com.girlkun.models.boss.BossStatus;
 import com.girlkun.models.boss.BossesData;
 import com.girlkun.models.player.Player;
+import com.girlkun.server.Manager;
 import com.girlkun.services.EffectSkillService;
 import com.girlkun.services.Service;
 import com.girlkun.utils.Util;
@@ -27,6 +28,8 @@ public class ThienSuWhis extends Boss {
         } else {
             Service.gI().dropItemMap(this.zone, Util.manhTS(zone, manhhiem[randomGR], 1, this.location.x, this.location.y, plKill.id));
         }
+        byte randomDoz = (byte) new Random().nextInt(Manager.itemIds_TL.length - 1);
+        Service.gI().dropItemMap(this.zone, Util.ratiItem(zone, Manager.itemIds_TL[randomDoz], 1, this.location.x, this.location.y, plKill.id));
     }
 
     @Override
@@ -72,18 +75,18 @@ public class ThienSuWhis extends Boss {
         }
     }
 
-//    @Override
-//    public void active() {
-//        super.active(); //To change body of generated methods, choose Tools | Templates.
-//        if (Util.canDoWithTime(st, 1000000)) {
-//            this.changeStatus(BossStatus.LEAVE_MAP);
-//        }
-//    }
-//
-//    @Override
-//    public void joinMap() {
-//        super.joinMap(); //To change body of generated methods, choose Tools | Templates.
-//        st = System.currentTimeMillis();
-//    }
-//    private long st;
+   @Override
+   public void active() {
+       super.active(); //To change body of generated methods, choose Tools | Templates.
+    //    if (Util.canDoWithTime(st, 1000000)) {
+    //        this.changeStatus(BossStatus.LEAVE_MAP);
+    //    }
+   }
+
+   @Override
+   public void joinMap() {
+       super.joinMap(); //To change body of generated methods, choose Tools | Templates.
+       st = System.currentTimeMillis();
+   }
+   private long st;
 }

@@ -2782,6 +2782,8 @@ public class NpcFactory {
                                 DaiHoiVoThuatService.gI(DaiHoiVoThuat.gI().getDaiHoiNow()).Reg(player);
                             }
                             break;
+                        case 2:
+                            break;
                     }
                 }
             }

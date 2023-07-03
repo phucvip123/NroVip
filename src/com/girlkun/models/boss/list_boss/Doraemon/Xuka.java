@@ -49,9 +49,9 @@ public class Xuka extends Boss {
     }  @Override
     public void active() {
         super.active(); //To change body of generated methods, choose Tools | Templates.
-        if(Util.canDoWithTime(st,900000)){
-            this.changeStatus(BossStatus.LEAVE_MAP);
-        }
+        // if(Util.canDoWithTime(st,900000)){
+        //     this.changeStatus(BossStatus.LEAVE_MAP);
+        // }
     }
 
     @Override

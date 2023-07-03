@@ -1,5 +1,9 @@
 package com.girlkun.models.map.doanhtrai;
 
+import com.girlkun.models.boss.BossData;
+import com.girlkun.models.boss.BossID;
+import com.girlkun.models.boss.BossManager;
+import com.girlkun.models.boss.list_boss.doanh_trai.BossDoanhTrai;
 import com.girlkun.models.map.Zone;
 import com.girlkun.models.player.Player;
 import com.girlkun.services.Service;
@@ -39,8 +43,10 @@ public class DoanhTraiService {
         }
         if (pl.clan.doanhTrai != null) {
             ChangeMapService.gI().changeMapInYard(pl, 53, -1, 60);
+            BossManager.gI().createBoss(BossID.TRUNG_UY_TRANG);
             return;
         }
+        
         DoanhTrai doanhTrai = null;
         for (DoanhTrai dt : this.doanhTrais) {
             if (dt.getClan() == null) {

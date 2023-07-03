@@ -1,5 +1,7 @@
 package com.girlkun.models.boss.list_boss.android;
 
+import java.util.Random;
+
 import com.girlkun.consts.ConstMob;
 import com.girlkun.models.boss.Boss;
 import com.girlkun.models.boss.BossID;
@@ -9,6 +11,7 @@ import com.girlkun.models.boss.BossesData;
 import com.girlkun.models.map.ItemMap;
 import com.girlkun.models.mob.Mob;
 import com.girlkun.models.player.Player;
+import com.girlkun.server.Manager;
 import com.girlkun.services.EffectSkillService;
 import com.girlkun.services.PetService;
 import com.girlkun.services.Service;
@@ -26,12 +29,13 @@ public class SuperAndroid17 extends Boss {
     }
    @Override
     public void reward(Player plKill) {
-        if (Util.isTrue(15, 100)) {
-        ItemMap it = new ItemMap(this.zone, 1230, 1, this.location.x, this.zone.map.yPhysicInTop(this.location.x,
+        if (Util.isTrue(85, 100)) {
+        ItemMap it = new ItemMap(this.zone, 1266, 1, this.location.x, this.zone.map.yPhysicInTop(this.location.x,
                 this.location.y - 24), plKill.id);
         Service.gI().dropItemMap(this.zone, it);
         }
-        
+        byte randomDoz = (byte) new Random().nextInt(Manager.itemIds_TL.length - 1);
+        Service.gI().dropItemMap(this.zone, Util.ratiItem(zone, Manager.itemIds_TL[randomDoz], 1, this.location.x, this.location.y, plKill.id));
     } 
     @Override
     public int injured(Player plAtt, int damage, boolean piercing, boolean isMobAttack) {

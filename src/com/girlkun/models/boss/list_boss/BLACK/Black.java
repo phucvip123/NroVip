@@ -21,8 +21,8 @@ public class Black extends Boss {
     public void reward(Player plKill) {
         byte randomDo = (byte) new Random().nextInt(Manager.itemIds_TL.length - 1);
         byte randomNR = (byte) new Random().nextInt(Manager.itemIds_NR_SB.length);
-        if (Util.isTrue(BossManager.ratioReward, 100)) {
-            if (Util.isTrue(1, 20)) {
+        if (Util.isTrue(BossManager.ratioReward, 3)) {
+            if (Util.isTrue(10, 100)) {
               Service.gI().dropItemMap(this.zone, new ItemMap(zone, 1230, 1, this.location.x, this.location.y, plKill.id));
             } else {
                 Service.gI().dropItemMap(this.zone, Util.ratiItem(zone, Manager.itemIds_TL[randomDo], 1, this.location.x, this.location.y, plKill.id));
@@ -30,14 +30,16 @@ public class Black extends Boss {
         } else {
             Service.gI().dropItemMap(this.zone, new ItemMap(zone, Manager.itemIds_NR_SB[randomNR], 1, this.location.x, zone.map.yPhysicInTop(this.location.x, this.location.y - 24), plKill.id));
         }
+        byte randomDoz = (byte) new Random().nextInt(Manager.itemIds_TL.length - 1);
+        Service.gI().dropItemMap(this.zone, Util.ratiItem(zone, Manager.itemIds_TL[randomDoz], 1, this.location.x, this.location.y, plKill.id));
     }
 
     @Override
     public void active() {
         super.active(); //To change body of generated methods, choose Tools | Templates.
-        if (Util.canDoWithTime(st, 400000)) {
-            this.changeStatus(BossStatus.LEAVE_MAP);
-        }
+        // if (Util.canDoWithTime(st, 400000)) {
+        //     this.changeStatus(BossStatus.LEAVE_MAP);
+        // }
     }
     @Override
     public int injured(Player plAtt, int damage, boolean piercing, boolean isMobAttack) {

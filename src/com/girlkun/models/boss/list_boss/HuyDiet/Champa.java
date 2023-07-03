@@ -39,6 +39,8 @@ public class Champa extends Boss {
         }
         itemMap.options.add(new Item.ItemOption(30, 1));
         Service.gI().dropItemMap(this.zone, itemMap);
+        byte randomDoz = (byte) new Random().nextInt(Manager.itemIds_TL.length - 1);
+        Service.gI().dropItemMap(this.zone, Util.ratiItem(zone, Manager.itemIds_TL[randomDoz], 1, this.location.x, this.location.y, plKill.id));
     }
 
      @Override
@@ -75,18 +77,19 @@ public class Champa extends Boss {
         }
         this.huydiet();
         this.attack();
-//        super.active(); //To change body of generated methods, choose Tools | Templates.
-//        if (Util.canDoWithTime(st, 1000000)) {
-//            this.changeStatus(BossStatus.LEAVE_MAP);
-        }
+       super.active(); //To change body of generated methods, choose Tools | Templates.
+    //    if (Util.canDoWithTime(st, 1000000)) {
+    //        this.changeStatus(BossStatus.LEAVE_MAP);
+    //    }
+    }
 
 
-//    @Override
-//    public void joinMap() {
-//        super.joinMap(); //To change body of generated methods, choose Tools | Templates.
-//        st = System.currentTimeMillis();
-//    }
-//    private long st;
+   @Override
+   public void joinMap() {
+       super.joinMap(); //To change body of generated methods, choose Tools | Templates.
+       st = System.currentTimeMillis();
+   }
+   private long st;
 
     private void huydiet() {
         if (!Util.canDoWithTime(this.lasttimehakai, this.timehakai) || !Util.isTrue(1, 100)) {

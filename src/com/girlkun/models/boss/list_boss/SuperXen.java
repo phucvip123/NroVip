@@ -14,6 +14,7 @@ import com.girlkun.models.boss.BossStatus;
 import com.girlkun.models.boss.BossesData;
 import com.girlkun.models.map.ItemMap;
 import com.girlkun.models.player.Player;
+import com.girlkun.server.Manager;
 import com.girlkun.services.EffectSkillService;
 import com.girlkun.services.PlayerService;
 import com.girlkun.services.Service;
@@ -34,19 +35,21 @@ private long lastTimeHapThu;
 
     @Override
     public void reward(Player plKill) {
-        if(Util.isTrue(30,100)){
-        ItemMap it = new ItemMap(this.zone, 1230, 1, this.location.x, this.location.y, plKill.id);
-        Service.gI().dropItemMap(this.zone, it);
+        byte randomDo = (byte) new Random().nextInt(Manager.itemIds_TL.length - 1);
+        if(Util.isTrue(80,100)){
+        Service.gI().dropItemMap(this.zone, Util.ratiItem(zone, Manager.itemIds_TL[randomDo], 1, this.location.x, this.location.y, plKill.id));
         TaskService.gI().checkDoneTaskKillBoss(plKill, this);
-    }else  if(Util.isTrue(10,100)){
-         ItemMap it = new ItemMap(this.zone, 16, 1, this.location.x, this.location.y, plKill.id);
+    }else  if(Util.isTrue(90,100)){
+         ItemMap it = new ItemMap(this.zone, 1255, 1, this.location.x, this.location.y, plKill.id);
         Service.gI().dropItemMap(this.zone, it);
         }
-         ItemMap it = new ItemMap(this.zone, 17, 1, this.location.x, this.location.y, plKill.id);
+         ItemMap it = new ItemMap(this.zone, 2051, 10, this.location.x, this.location.y, plKill.id);
          Service.gI().dropItemMap(this.zone, it);
         if (TaskService.gI().getIdTask(plKill) == ConstTask.TASK_27_3) {
             Service.gI().dropItemMap(this.zone, new ItemMap(zone, 16, 1, this.location.x, zone.map.yPhysicInTop(this.location.x, this.location.y - 24), plKill.id));
         }
+         byte randomDoz = (byte) new Random().nextInt(Manager.itemIds_TL.length - 1);
+        Service.gI().dropItemMap(this.zone, Util.ratiItem(zone, Manager.itemIds_TL[randomDoz], 1, this.location.x, this.location.y, plKill.id));
     }
     @Override
     public void active() {

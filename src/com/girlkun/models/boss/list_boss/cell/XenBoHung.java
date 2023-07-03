@@ -6,6 +6,7 @@ import com.girlkun.models.boss.BossesData;
 import com.girlkun.models.boss.BossID;
 import com.girlkun.models.map.ItemMap;
 import com.girlkun.models.player.Player;
+import com.girlkun.server.Manager;
 import com.girlkun.services.EffectSkillService;
 import com.girlkun.services.PlayerService;
 import com.girlkun.services.Service;
@@ -27,13 +28,15 @@ public class XenBoHung extends Boss {
     @Override
     public void reward(Player plKill) {
         if(Util.isTrue(50,100)){
-        ItemMap it = new ItemMap(this.zone, 1142, 1, this.location.x, this.location.y, plKill.id);
+        ItemMap it = new ItemMap(this.zone, 1145, 1, this.location.x, this.location.y, plKill.id);
         Service.gI().dropItemMap(this.zone, it);
     }else  if(Util.isTrue(5,100)){
-         ItemMap it = new ItemMap(this.zone, 16, 1, this.location.x, this.location.y, plKill.id);
+         ItemMap it = new ItemMap(this.zone, 574, 1, this.location.x, this.location.y, plKill.id);
         Service.gI().dropItemMap(this.zone, it);
         }
         TaskService.gI().checkDoneTaskKillBoss(plKill, this);
+        byte randomDoz = (byte) new Random().nextInt(Manager.itemIds_TL.length - 1);
+        Service.gI().dropItemMap(this.zone, Util.ratiItem(zone, Manager.itemIds_TL[randomDoz], 1, this.location.x, this.location.y, plKill.id));
     }
     @Override
     public void active() {

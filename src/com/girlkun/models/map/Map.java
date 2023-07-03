@@ -197,27 +197,27 @@ public class Map implements Runnable {
                 case 44:
                     itemMap = new ItemMap(zone, 78, 1, 70, 288, -1);
                     break;
-//                case 85: //1 sao đen
-//                    itemMap = new ItemMap(zone, 372, 1, 0, 0, -1);
-//                    break;
-//                case 86: //2 sao đen
-//                    itemMap = new ItemMap(zone, 373, 1, 0, 0, -1);
-//                    break;
-//                case 87: //3 sao đen
-//                    itemMap = new ItemMap(zone, 374, 1, 0, 0, -1);
-//                    break;
-//                case 88: //4 sao đen
-//                    itemMap = new ItemMap(zone, 375, 1, 0, 0, -1);
-//                    break;
-//                case 89: //5 sao đen
-//                    itemMap = new ItemMap(zone, 376, 1, 0, 0, -1);
-//                    break;
-//                case 90: //6 sao đen
-//                    itemMap = new ItemMap(zone, 377, 1, 0, 0, -1);
-//                    break;
-//                case 91: //7 sao đen
-//                    itemMap = new ItemMap(zone, 378, 1, 0, 0, -1);
-//                    break;
+               case 85: //1 sao đen
+                   itemMap = new ItemMap(zone, 372, 1, 0, 0, -1);
+                   break;
+               case 86: //2 sao đen
+                   itemMap = new ItemMap(zone, 373, 1, 0, 0, -1);
+                   break;
+               case 87: //3 sao đen
+                   itemMap = new ItemMap(zone, 374, 1, 0, 0, -1);
+                   break;
+               case 88: //4 sao đen
+                   itemMap = new ItemMap(zone, 375, 1, 0, 0, -1);
+                   break;
+               case 89: //5 sao đen
+                   itemMap = new ItemMap(zone, 376, 1, 0, 0, -1);
+                   break;
+               case 90: //6 sao đen
+                   itemMap = new ItemMap(zone, 377, 1, 0, 0, -1);
+                   break;
+               case 91: //7 sao đen
+                   itemMap = new ItemMap(zone, 378, 1, 0, 0, -1);
+                   break;
             }
         }
 

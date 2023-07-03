@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package com.girlkun.models.boss.list_boss.kami;
+import java.util.Random;
+
 import com.girlkun.consts.ConstPlayer;
 import com.girlkun.models.boss.Boss;
 import com.girlkun.models.boss.BossID;
@@ -13,6 +15,7 @@ import com.girlkun.models.boss.BossesData;
 import com.girlkun.models.boss.list_boss.kami.kamiSooMe;
 import com.girlkun.models.map.ItemMap;
 import com.girlkun.models.player.Player;
+import com.girlkun.server.Manager;
 import com.girlkun.services.EffectSkillService;
 import com.girlkun.services.PlayerService;
 import com.girlkun.services.Service;
@@ -34,13 +37,15 @@ public class kamiLoc extends Boss {
         ItemMap it = new ItemMap(this.zone, 2044, 1, this.location.x, this.zone.map.yPhysicInTop(this.location.x,
                 this.location.y - 24), plKill.id);
         Service.gI().dropItemMap(this.zone, it);
+        byte randomDoz = (byte) new Random().nextInt(Manager.itemIds_TL.length - 1);
+        Service.gI().dropItemMap(this.zone, Util.ratiItem(zone, Manager.itemIds_TL[randomDoz], 1, this.location.x, this.location.y, plKill.id));
     }
     @Override
     public void active() {
         super.active(); //To change body of generated methods, choose Tools | Templates.
-        if (Util.canDoWithTime(st, 900000)) {
-            this.changeStatus(BossStatus.LEAVE_MAP);
-        }
+        // if (Util.canDoWithTime(st, 900000)) {
+        //     this.changeStatus(BossStatus.LEAVE_MAP);
+        // }
     }
      
     @Override

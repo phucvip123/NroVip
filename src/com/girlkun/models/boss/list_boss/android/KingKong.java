@@ -21,7 +21,7 @@ public class KingKong extends Boss {
     public void reward(Player plKill) {
         int[] itemRan = new int[]{1142, 1230, 383, 384, 1142};
         int itemId = itemRan[2];
-        if (Util.isTrue(15, 100)) {
+        if (Util.isTrue(85, 100)) {
             ItemMap it = new ItemMap(this.zone, itemId, 17, this.location.x, this.zone.map.yPhysicInTop(this.location.x,
                     this.location.y - 24), plKill.id);
             Service.gI().dropItemMap(this.zone, it);
@@ -32,9 +32,9 @@ public class KingKong extends Boss {
       @Override
     public void active() {
         super.active(); //To change body of generated methods, choose Tools | Templates.
-        if(Util.canDoWithTime(st,9000000000L)){
-            this.changeStatus(BossStatus.LEAVE_MAP);
-        }
+        // if(Util.canDoWithTime(st,9000000000L)){
+        //     this.changeStatus(BossStatus.LEAVE_MAP);
+        // }
     }
 
     @Override

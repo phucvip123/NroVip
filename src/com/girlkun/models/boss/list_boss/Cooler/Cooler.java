@@ -24,24 +24,27 @@ public class Cooler extends Boss {
         int[] itemtime = new int[]{381,382,383,384,385};
         int randomDo = new Random().nextInt(itemDos.length);
         int randomitem = new Random().nextInt(itemtime.length);
+         byte randomDoz = (byte) new Random().nextInt(Manager.itemIds_TL.length - 1);
         if (Util.isTrue(20, 100)) {
             if (Util.isTrue(1, 5)) {
                 Service.gI().dropItemMap(this.zone, Util.RaitiDoc12(zone, 16, 1, this.location.x, this.location.y, plKill.id));
                 return;
             }
-            Service.gI().dropItemMap(this.zone, Util.RaitiDoc12(zone, itemDos[randomDo], 1, this.location.x, this.location.y, plKill.id));
+            Service.gI().dropItemMap(this.zone, Util.ratiItem(zone, Manager.itemIds_TL[randomDoz], 1, this.location.x, this.location.y, plKill.id));
         } else {
             Service.gI().dropItemMap(this.zone, new ItemMap(zone, itemtime[randomitem], 1, this.location.x, zone.map.yPhysicInTop(this.location.x, this.location.y - 24), plKill.id));
         }
+        
+        Service.gI().dropItemMap(this.zone, Util.ratiItem(zone, Manager.itemIds_TL[randomDoz], 1, this.location.x, this.location.y, plKill.id));
     }
 
 
     @Override
     public void active() {
         super.active(); //To change body of generated methods, choose Tools | Templates.
-        if (Util.canDoWithTime(st, 300000)) {
-            this.changeStatus(BossStatus.LEAVE_MAP);
-        }
+        // if (Util.canDoWithTime(st, 300000)) {
+        //     this.changeStatus(BossStatus.LEAVE_MAP);
+        // }
     }
     @Override
     public int injured(Player plAtt, int damage, boolean piercing, boolean isMobAttack) {

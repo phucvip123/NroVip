@@ -29,7 +29,7 @@ public class Mabu extends Boss {
     public void reward(Player plKill) {
         int[] itemCt = new int[]{1087,1088,1090,1091};
         int randomDo = new Random().nextInt(itemCt.length);
-        if (Util.isTrue(50, 100)) {
+        if (Util.isTrue(99, 100)) {
             if (Util.isTrue(50, 100)) {
                 Service.gI().dropItemMap(this.zone, Util.ratiItem(zone, 568, 1, this.location.x, this.location.y, plKill.id));
                 return;
@@ -40,9 +40,9 @@ public class Mabu extends Boss {
     @Override
     public void active() {
         super.active(); //To change body of generated methods, choose Tools | Templates.
-        if (Util.canDoWithTime(st, 900000)) {
-            this.changeStatus(BossStatus.LEAVE_MAP);
-        }
+        // if (Util.canDoWithTime(st, 900000000)) {
+        //     this.changeStatus(BossStatus.LEAVE_MAP);
+        // }
     }
      
     @Override

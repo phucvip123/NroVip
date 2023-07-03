@@ -25,8 +25,8 @@ public class Chaien extends Boss {
         int randomDo = new Random().nextInt(itemDos.length);
         int randomNR = new Random().nextInt(NRs.length);
         if (Util.isTrue(15, 100)) {
-            if (Util.isTrue(1, 50)) {
-                Service.gI().dropItemMap(this.zone, Util.ratiItem(zone, 1230, 1, this.location.x, this.location.y, plKill.id));
+            if (Util.isTrue(1, 10)) {
+                Service.gI().dropItemMap(this.zone, Util.ratiItem(zone, 2051, 50, this.location.x, this.location.y, plKill.id));
                 return;
             }
             Service.gI().dropItemMap(this.zone, Util.ratiItem(zone, itemDos[randomDo], 1, this.location.x, this.location.y, plKill.id));
@@ -39,9 +39,9 @@ public class Chaien extends Boss {
    @Override
     public void active() {
         super.active(); //To change body of generated methods, choose Tools | Templates.
-        if(Util.canDoWithTime(st,900000)){
-            this.changeStatus(BossStatus.LEAVE_MAP);
-        }
+        // if(Util.canDoWithTime(st,900000)){
+        //     this.changeStatus(BossStatus.LEAVE_MAP);
+        // }
     }
 
     @Override
