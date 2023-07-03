@@ -912,9 +912,9 @@ public class NpcFactory {
                                 case 3: //shop
                                     createOtherMenu(player, ConstNpc.BUY_DE_TU_VIP,
                                             "Xin chào, ta có một số bé pet vip nè!\n|1|Số tiền của bạn còn : " + player.getSession().coin
-                                            + "\n|7|Đệ Goku Vô Cực: 70k coin, Hợp thể tăng 50% chỉ số"
-                                            + "\n|7|Đệ Abinus: 250k coin, Hợp thể tăng 100% chỉ số"
-                                            + "\n|7|Đệ Black Goku: 600k coin, Hợp thể tăng 140% chỉ số",
+                                            + "\n|7|Đệ Goku Vô Cực: 50k coin, Hợp thể tăng 50% chỉ số"
+                                            + "\n|7|Đệ Abinus: 100k coin, Hợp thể tăng 100% chỉ số"
+                                            + "\n|7|Đệ Black Goku: 150k coin, Hợp thể tăng 140% chỉ số",
                                             "Goku Vô Cực", "Abinus", "Black Goku");
                                     break;
 
@@ -934,27 +934,27 @@ public class NpcFactory {
                             try (Connection con = GirlkunDB.getConnection();) {
                                 switch (select) {
                                     case 0:
-                                        if (player.getSession().coin < 70000) {
-                                            Service.gI().sendThongBao(player, "Bạn không có đủ 70k coin");
+                                        if (player.getSession().coin < 50000) {
+                                            Service.gI().sendThongBao(player, "Bạn không có đủ 50k coin");
                                             return;
                                         }
-                                        player.getSession().coin -= 70000;
+                                        player.getSession().coin -= 50000;
                                         PetService.gI().createGokuVoCucPetVip(player, player.pet != null, player.gender);
                                         break;
                                     case 1:
-                                        if (player.getSession().coin < 250000) {
-                                            Service.gI().sendThongBao(player, "Bạn không có đủ 250k coin");
+                                        if (player.getSession().coin < 100000) {
+                                            Service.gI().sendThongBao(player, "Bạn không có đủ 100k coin");
                                             return;
                                         }
-                                        player.getSession().coin -= 250000;
+                                        player.getSession().coin -= 100000;
                                         PetService.gI().createAbinusPetVip(player, player.pet != null, player.gender);
                                         break;
                                     case 2:
-                                        if (player.getSession().coin < 600000) {
-                                            Service.gI().sendThongBao(player, "Bạn không có đủ 600k coin");
+                                        if (player.getSession().coin < 150000) {
+                                            Service.gI().sendThongBao(player, "Bạn không có đủ 150k coin");
                                             return;
                                         }
-                                        player.getSession().coin -= 600000;
+                                        player.getSession().coin -= 150000;
                                         PetService.gI().createBlackGokuPetVip(player, player.pet != null, player.gender);
                                         break;
                                 }
