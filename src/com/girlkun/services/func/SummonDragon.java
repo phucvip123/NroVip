@@ -428,13 +428,13 @@ public class SummonDragon {
                             for (ItemOption io : item.itemOptions) {
                                 if (io.optionTemplate.id == 72) {
                                     level = io.param;
-                                    if (level < 7) {
+                                    if (level < 8) {
                                         io.param++;
                                     }
                                     break;
                                 }
                             }
-                            if (level < 7) {
+                            if (level < 8) {
                                 if (level == 0) {
                                     item.itemOptions.add(new ItemOption(72, 1));
                                 }
@@ -457,7 +457,7 @@ public class SummonDragon {
                         }
                         break;
                     case 2: //chí mạng +2%
-                        if (this.playerSummonShenron.nPoint.critg < 9) {
+                        if (this.playerSummonShenron.nPoint.critg < 20) {
                             this.playerSummonShenron.nPoint.critg += 2;
                         } else {
                             Service.getInstance().sendThongBao(playerSummonShenron, "Điều ước này đã quá sức với ta, ta sẽ cho ngươi chọn lại");
@@ -517,13 +517,13 @@ public class SummonDragon {
                             for (ItemOption io : item.itemOptions) {
                                 if (io.optionTemplate.id == 72) {
                                     level = io.param;
-                                    if (level < 7) {
+                                    if (level < 8) {
                                         io.param++;
                                     }
                                     break;
                                 }
                             }
-                            if (level < 7) {
+                            if (level < 8) {
                                 if (level == 0) {
                                     item.itemOptions.add(new ItemOption(72, 1));
                                 }
@@ -546,7 +546,7 @@ public class SummonDragon {
                         }
                         break;
                     case 2: //chí mạng +2%
-                        if (this.playerSummonShenron.nPoint.critg < 9) {
+                        if (this.playerSummonShenron.nPoint.critg < 20) {
                             this.playerSummonShenron.nPoint.critg += 2;
                         } else {
                             Service.getInstance().sendThongBao(playerSummonShenron, "Điều ước này đã quá sức với ta, ta sẽ cho ngươi chọn lại");
@@ -615,7 +615,7 @@ public class SummonDragon {
                         break;
                     case 2: //+200 tr smtn
 //                        if (this.playerSummonShenron.nPoint.power >= 2000000) {
-                            Service.getInstance().addSMTN(this.playerSummonShenron, (byte) 2, 200, false);
+                            Service.getInstance().addSMTN(this.playerSummonShenron, (byte) 2, 200000000, false);
 //                        } else {
 //                            Service.getInstance().sendThongBao(playerSummonShenron, "Xin lỗi, điều ước này khó quá, ta không thể thực hiện.");
 //                            reOpenShenronWishes(playerSummonShenron);
@@ -630,13 +630,13 @@ public class SummonDragon {
                                 for (ItemOption io : item.itemOptions) {
                                     if (io.optionTemplate.id == 72) {
                                         level = io.param;
-                                        if (level < 7) {
+                                        if (level < 8) {
                                             io.param++;
                                         }
                                         break;
                                     }
                                 }
-                                if (level < 7) {
+                                if (level < 8) {
                                     if (level == 0) {
                                         item.itemOptions.add(new ItemOption(72, 1));
                                     }
