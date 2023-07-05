@@ -213,8 +213,8 @@ public class BossManager implements Runnable {
                     return new Android15();
                 case BossID.SUPER_XEN:
                     return new SuperXen();
-//                    case BossID.SUPER_ANDROID_17:
-//                    return new SuperAndroid17();
+                case BossID.SUPER_ANDROID_17:
+                    return new SuperAndroid17();
                 case BossID.PIC:
                     return new Pic();
                 case BossID.POC:
@@ -241,8 +241,8 @@ public class BossManager implements Runnable {
                     return new Kingcold();
                 case BossID.FIDE_ROBOT:
                     return new FideRobot();
-              //  case BossID.COOLER:
-                  //  return new Cooler();
+                case BossID.COOLER:
+                    return new Cooler();
                 case BossID.ZAMASMAX:
                     return new ZamasMax();
                 case BossID.ZAMASZIN:

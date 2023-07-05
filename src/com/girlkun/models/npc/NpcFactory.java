@@ -1619,6 +1619,7 @@ public class NpcFactory {
                                     ChangeMapService.gI().changeMap(player, 50, -1, 318, 336);
                                     break;
                                 case 2:
+                                    ChangeMapService.gI().changeMap(player,142,-1,318,336);
                                     //con đường rắn độc
                                     break;
                             }

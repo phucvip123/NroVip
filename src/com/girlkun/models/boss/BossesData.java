@@ -1661,7 +1661,7 @@ public class BossesData {
             new short[]{508, 509, 510, -1, -1, -1}, //outfit {head, body, leg, bag, aura, eff}
             1, //dame
             new int[]{1000000}, //hp
-            new int[]{14}, //map join
+            new int[]{105,106,107,108,109,110}, //map join
             new int[][]{
                 {Skill.DICH_CHUYEN_TUC_THOI, 7, 8000},
                    {Skill.DE_TRUNG, 7, 1000},
@@ -1674,7 +1674,7 @@ public class BossesData {
                     "|-1|Ta sẽ cho ngươi cái nịt!",
             }, //text chat 2
             new String[]{"|-1|Biến hình !!!!!!!!!!!!"}, //text chat 3
-            REST_30_M
+            REST_15_M
     );
     public static final BossData COOLER_2 = new BossData(
             "Cooler 2", //name
@@ -1682,7 +1682,7 @@ public class BossesData {
             new short[]{508, 509, 510, -1, -1, -1}, //outfit {head, body, leg, bag, aura, eff}
             1, //dame
             new int[]{1000000}, //hp
-            new int[]{14}, //map join
+            new int[]{105,106,107,108,109,110}, //map join
             new int[][]{
                 {Skill.DE_TRUNG, 7, 1000},
                 {Skill.KHIEN_NANG_LUONG, 7, 100000},
@@ -1733,7 +1733,7 @@ public class BossesData {
             new String[]{}, //text chat 1
             new String[]{}, //text chat 2
             new String[]{}, //text chat 3
-            REST_30_M
+            REST_15_M
     );
       public static final BossData KAMIRIN = new BossData(
             "Super Super SooMe", //name
