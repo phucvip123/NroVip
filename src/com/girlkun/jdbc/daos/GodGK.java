@@ -95,7 +95,7 @@ public static Boolean baotri = false;
 
 
                 if (rs.getBoolean("ban")) {
-                    Service.gI().sendThongBaoOK(session, "Bạn lên Website nrovocuc.com để kích hoạt tài khoản free nhé ♥!");
+                    Service.gI().sendThongBaoOK(session, "Bạn lên Website nro để kích hoạt tài khoản free nhé ♥!");
 //                if (rs.getInt("ban")) {
 //                    Service.gI().sendThongBaoOK(session, "Phí Kích Hoạt Tài Khoản Là 20K Bạn Nhé ♥!");
                 }else if (baotri && session.isAdmin){

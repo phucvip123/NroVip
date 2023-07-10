@@ -1279,9 +1279,9 @@ public class NPoint {
             tiemNang += ((long) tiemNang * 5);
         } else tiemNang += ((long) tiemNang * 10);
         return tiemNang;*/
-        if(power <=100000000000L) tiemNang += ((long) tiemNang * 2);
-        else if(power <= 400000000000L && power >=100000000000L) tiemNang += ((long) tiemNang );
-        else if(power <= 700000000000L && power >=400000000000L) tiemNang += ((long) tiemNang /2);
+        if(power <=100000000000L) tiemNang += ((long) tiemNang * 10);
+        else if(power <= 400000000000L && power >=100000000000L) tiemNang += ((long) tiemNang *5);
+        else if(power <= 700000000000L && power >=400000000000L) tiemNang += ((long) tiemNang * 2);
         else if(power <= 1000000000000L && power >= 700000000000L) tiemNang += ((long) tiemNang / 30);
         else if(power <= 1200000000000L && power >= 1000000000000L) tiemNang += ((long) tiemNang / 40);
         else if(power <= 1500000000000L && power >= 1200000000000L) tiemNang += ((long) tiemNang / 50);

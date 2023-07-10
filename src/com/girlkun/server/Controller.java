@@ -786,7 +786,7 @@ public class Controller implements IMessageHandler {
     }
 
     private void sendThongBaoServer(Player player) {
-        Service.gI().sendThongBaoFromAdmin(player,  "|7| Wellcome Đến Với\b|3| Nro Dark\b|2| Chúc Anh Em Chơi Game Vui Vẻ");
+        Service.gI().sendThongBaoFromAdmin(player,  "|7| Wellcome Đến Với\b|3| Nro Sunny\b|2| Chúc Anh Em Chơi Game Vui Vẻ");
     }
 
     private void clearVTSK(Player player) {
